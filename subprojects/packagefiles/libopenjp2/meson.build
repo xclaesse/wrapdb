@@ -20,7 +20,7 @@ openjpeg_version_build = '1'
 openjpeg_package_version = '@0@.@1@.@2@'.format(openjpeg_version_major, openjpeg_version_minor, openjpeg_version_build)
 
 
-m_dep = cc.find_library('m')
+m_dep = cc.find_library('m', required: false)
 thread_dep = dependency('threads')
 
 # clock_gettime might require -rt, or it might not. find out
