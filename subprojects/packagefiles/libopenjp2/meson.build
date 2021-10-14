@@ -22,14 +22,8 @@ openjpeg_package_version = '@0@.@1@.@2@'.format(openjpeg_version_major, openjpeg
 
 m_dep = cc.find_library('m', required: false)
 thread_dep = dependency('threads')
+librt = cc.find_library('rt', required : false)
 
-# clock_gettime might require -rt, or it might not. find out
-if not cc.has_function('clock_gettime', prefix : '#define _GNU_SOURCE\n#include <time.h>')
-  # XXX: untested
-  rt_dep = cc.find_library('rt')
-else
-  rt_dep = []
-endif
 
 wxwidgets_dep = dependency('wxWidgets', required: get_option('build_viewer'))
 
