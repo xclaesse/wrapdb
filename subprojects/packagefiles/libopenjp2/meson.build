@@ -23,7 +23,6 @@ openjpeg_package_version = '@0@.@1@.@2@'.format(openjpeg_version_major, openjpeg
 m_dep = cc.find_library('m')
 thread_dep = dependency('threads')
 
-
 # clock_gettime might require -rt, or it might not. find out
 if not cc.has_function('clock_gettime', prefix : '#define _GNU_SOURCE\n#include <time.h>')
   # XXX: untested
@@ -34,8 +33,6 @@ endif
 
 wxwidgets_dep = dependency('wxWidgets', required: get_option('build_viewer'))
 
-subdir('thirdparty')
-
 if host_system == 'windows'
   if get_option('default_library') == 'static'
     add_project_arguments(['-DOPJ_STATIC'], language: 'c')
@@ -43,6 +40,8 @@ if host_system == 'windows'
     add_project_arguments(['-DOPJ_EXPORTS'], language: 'c')
   endif
 endif
+
+subdir('thirdparty')
 
 #-----------------------------------------------------------------------------
 # Big endian test:
