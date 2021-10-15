@@ -22,7 +22,7 @@ openjpeg_package_version = '@0@.@1@.@2@'.format(openjpeg_version_major, openjpeg
 
 m_dep = cc.find_library('m', required: false)
 thread_dep = dependency('threads')
-librt = cc.find_library('rt', required : false)
+rt_dep = cc.find_library('rt', required : false)
 
 
 wxwidgets_dep = dependency('wxWidgets', required: get_option('build_viewer'))
