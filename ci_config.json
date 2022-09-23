@@ -366,9 +366,6 @@
     ],
     "choco_packages": [
       "nasm"
-    ],
-    "build_options": [
-      "openh264:tests=disabled"
     ]
   },
   "openssl": {
