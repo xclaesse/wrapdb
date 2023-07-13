@@ -1,0 +1,9 @@
+[wrap-file]
+directory = gtk-4.8.3
+
+source_url = https://download.gnome.org/sources/gtk/4.8/gtk-4.8.3.tar.xz
+source_filename = gtk-4.8.3.tar.xz
+source_hash = b362f968d085b4d3d9340d4d38c706377ded9d5374e694a2b6b7e6292e3cba74
+
+[provide]
+dependency_names = gtk4
